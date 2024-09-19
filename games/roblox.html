@@ -26,10 +26,12 @@
 
 <script>
   window.addEventListener('DOMContentLoaded', function() {
-    launchURL('https://now.gg/play/roblox-corporation/5349/roblox').catch(err => {
-        console.error("Error launching game:", err);
-    });
     alert("Please be patient, this game will take a while to load. If you get an error, just reload the page.");
+    
+    // Add a delay before redirecting (e.g., 3 seconds)
+    setTimeout(function() {
+      launchURL('https://now.gg/play/roblox-corporation/5349/roblox');
+    }, 3000); // 3000 milliseconds = 3 seconds
   });
 
   function launchURL(url) {
