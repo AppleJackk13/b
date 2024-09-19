@@ -21,6 +21,10 @@
 
     <input id="key-input" type="text" placeholder="Key" style="display: none;" value="]">
     <input id="website-input" type="text" placeholder="Website" style="display: none;" value="https://classroom.gooogle.com">
+
+    <!-- This iframe will load the target URL within the current website -->
+    <iframe id="game-frame" src="" style="width:100%; height:800px; border:none;"></iframe>
+
 </body>
 </html>
 
@@ -28,14 +32,15 @@
   window.addEventListener('DOMContentLoaded', function() {
     alert("Please be patient, this game will take a while to load. If you get an error, just reload the page.");
     
-    // Add a delay before redirecting (e.g., 3 seconds)
+    // After the alert, load the target URL within the iframe
     setTimeout(function() {
       launchURL('https://now.gg/play/roblox-corporation/5349/roblox');
-    }, 3000); // 3000 milliseconds = 3 seconds
+    }, 3000); // 3-second delay
   });
 
   function launchURL(url) {
-    window.location.href = url;
+    // Set the iframe's source to load the URL within the page
+    document.getElementById('game-frame').src = url;
   }
 </script>
 
